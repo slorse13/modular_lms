@@ -1,0 +1,136 @@
+<!--
+@overview default HTML template of ccm component for website_manager modularcms
+@author Felix Bröhl <broehl@everoo.io> 2020
+-->
+
+<ccm-template key="selectBox">
+    <div id="website-select-box">
+        <div id="website-select-domain">%domain%</div>
+        <img id="website-select-icon" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/expand-arrow-icon.svg" />
+        <div id="website-select-drop-down">
+            <div id="website-select-list"></div>
+            <a id="website-select-manage-button" href="/websites/manage" class="website-select-list-item">Manage websites</a>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="listItem">
+    <div class="website-select-list-item" data-website-key="%websiteKey%" data-website-domain="%domain%">
+        <div class="website-select-list-item-domain">%domain%</div>
+    </div>
+</ccm-template>
+<ccm-template key="loader">
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+</ccm-template>
+<ccm-template key="createError">
+    <div class="panel-alert failure">
+        <img class="panel-alert-icon" src="https://slorse13.github.io/modular_lms/modularcms-components/user/resources/img/login-failure.svg" />
+        <div class="panel-alert-text">%text%</div>
+        <img class="panel-alert-close"src="https://slorse13.github.io/modular_lms/modularcms-components/user/resources/img/close.svg" />
+    </div>
+</ccm-template>
+<ccm-template key="createWebsitePanel">
+    <div id="website-create-panel" class="panel-container">
+        <div class="panel-box">
+            <div class="panel-loader-wrapper"></div>
+          <!--   <div class="panel-logo-wrapper">
+                <img src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/logo.svg">
+            </div> -->
+            <div class="panel-content">
+                <div class="panel-alert-wrapper"></div>
+                <h1 class="panel-heading">Enter a domain</h1>
+                <div class="panel-body">
+                    <form id="website-create-form" role="form">
+                        <label for="website-create-domain">Enter a domain e.g. mydomain.com or subdomain.mydomain.com</label>
+                        <input id="website-create-domain" type="text" name="user" placeholder="Enter a domain" value="" required="" pattern="(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]">
+                        <label for="website-create-base-url" style="display: none">Enter a base url (default is '/' representing the entry point on your website e.g. mydomain.com<b>/</b>)</label>
+                        <input id="website-create-base-url" style="display: none" type="text" name="user" placeholder="Enter a base url" value="/" required="" pattern="/([A-Za-z0-9-_]/)*">
+                        <input type="submit" value="Create website">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="installWebsitePanel">
+    <div id="website-install-panel" class="panel-container">
+        <div class="panel-box">
+            <div class="panel-loader-wrapper"></div>
+            <!-- <div class="panel-logo-wrapper"> -->
+                <!-- <img src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/logo.svg"> -->
+            <!-- </div> -->
+            <div class="panel-content">
+                <div class="panel-alert-wrapper"></div>
+                <h1 class="panel-heading">Setup your webhost</h1>
+                <div class="panel-body">
+                    <p>In order to connect your domain with modularcms you need to own a webhost that is related to your domain. Furthermore you must be able to upload the following files to your webhost.</p>
+                    <p>First you need to download the following .zip package</p>
+                    <div class="panel-button-wrapper">
+                        <a id="website-install-download" class="button button-primary" href="https://github.com/modularcms/site-template/archive/master.zip" target="_blank">Download .zip package</a>
+                    </div>
+                    <p>After that you need to extract the .zip file and upload the contained files to your web host folder that’s representing for your defined base url (<b>https://%domain%%baseUrl%</b>)</p>
+                    <div class="panel-button-wrapper">
+                        <a id="website-install-next" class="button button-primary button-disabled" href="/pages">Ok, I have done that</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="manageWebsitesModal">
+    <div id="manage-websites-modal" class="modal">
+        <div class="modal-bg"></div>
+        <div class="modal-inner" id="manage-modal">
+            <div class="modal-head">
+                <h2>Manage Events/Lectures</h2>
+                <img class="modal-close" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/close-icon.svg" />
+            </div>
+            <div id="list-modal" class="list"></div>
+            <div class="modal-footer">
+                <div id="modal-create-button" class="button button-primary">
+                    <img class="icon" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/add-icon.svg" />
+                    <div class="button-text">Add a new website</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="editWebsitesModal">
+    <div id="edit-websites-modal" class="modal">
+        <div class="modal-bg"></div>
+        <div class="modal-inner" id="edit-modal">
+            <div class="modal-head">
+                <div class="modal-back">
+                    <img src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/back-icon.svg" />
+                    <div class="modal-back-text">Back</div>
+                </div>
+                <h2>Manage websites</h2>
+                <img class="modal-close" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/close-icon.svg" />
+            </div>
+            <form id="edit-modal-website-form">
+                <div>
+                    <label for="edit-modal-website-domain">Event / Lecture domain</label>
+                    <input type="text" id="edit-modal-website-domain" required="" pattern="(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]"/>
+                </div>
+                <div style="display: none">
+                    <label for="edit-modal-website-base-url">Base url</label>
+                    <input type="text" id="edit-modal-website-base-url" required="" pattern="/([A-Za-z0-9-_]/)*" />
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="edit-modal-save-button" class="button button-primary" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="manageListItem">
+    <div class="list-item-wrapper">
+        <div class="list-item list-item-with-more-button" data-website-key="%websiteKey%" data-website-domain="%domain%" data-website-base-url="%baseUrl%">
+            <div class="list-item-title">%domain%</div>
+            <div class="list-item-subline"><i>%baseUrl%</i></div>
+            <img class="list-item-more-button" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/edit-icon.svg" />
+            <img class="list-item-more-button" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/install-icon.svg" />
+            <img class="list-item-more-button" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/trash-icon.svg" />
+        </div>
+        <div class="list-item-children"></div>
+    </div>
+</ccm-template>

@@ -1,0 +1,40 @@
+<ccm-template key="main">
+    <!-- Edited by Stefan Lorse -->
+    <!-- Added Backend and User Wrapper -->
+    <!-- Added eventname and actual page -->
+    <style>
+        * {
+            --color-primary: %colorPrimary%;
+            --color-secondary: %colorSecondary%;
+            --color-light: %colorLight%;
+            --footer-color: %colorFooter%;
+        }
+    </style>
+    <header>
+        <div class="row">
+            <div class="column-4" id="header-inner-wrapper">
+                <div id="logo-wrapper"></div>
+                <div id="backend-wrapper"></div>
+                <div id="user-wrapper"></div>
+                <div id="menu-wrapper"></div>
+            </div>
+        </div>
+      
+    </header>
+    <main><div class="content-zone" data-content-zone-name="layout"></div></main>
+    <footer>
+        <div id="footermenu">
+
+        </div>
+    </footer>
+</ccm-template>
+
+<ccm-template key="logo">
+    <a id="logo" href="/"><img src="%logoSrc%" title="%logoTitle%" /></a>
+    <a id="event_name" href="/">%eventName%</a>
+    <div id="actual-page"></div>
+</ccm-template>
+<ccm-template key="backend">
+    <div id="backend_link"   ><u>Backend</u></div>
+</ccm-template>
+ 

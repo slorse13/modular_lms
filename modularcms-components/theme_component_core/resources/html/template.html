@@ -1,0 +1,262 @@
+<ccm-template key="addBlock">
+    <div class="add-block">
+        <img loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/add-icon.svg" />
+        <div>Add new block</div>
+    </div>
+</ccm-template>
+
+<ccm-template key="editThemeDefinition">
+    <div class="edit-theme-definition">
+        <img data-action="config" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/settings-icon.svg" />
+        <img data-action="remove" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/trash-icon.svg" />
+    </div>
+</ccm-template>
+
+<ccm-template key="addThemeDefinitionAfter">
+    <div class="add-theme-definition-after">
+        <img data-action="config" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/plus-icon.svg" />
+    </div>
+</ccm-template>
+
+<ccm-template key="editInlineTool">
+    <div class="edit-inline-text-tool">
+        <img data-action="header" data-header-level="1" data-type='["header", "paragraph"]' loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/header-1-icon.svg" />
+        <img data-action="header" data-header-level="2" data-type='["header", "paragraph"]' loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/header-2-icon.svg" />
+        <img data-action="header" data-header-level="3" data-type='["header", "paragraph"]' loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/header-3-icon.svg" />
+        <img data-action="bold" data-type-not="header" data-only-with-range loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/bold-icon.svg" />
+        <img data-action="italic" data-only-with-range loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/italic-icon.svg" />
+        <img data-action="underline" data-only-with-range loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/underline-icon.svg" />
+        <img data-action="strikeThrough" data-only-with-range loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/strikethrough-icon.svg" />
+        <img data-action="removeFormat" data-only-with-range loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/clear-formatting-icon.svg" />
+    </div>
+</ccm-template>
+
+<ccm-template key="defineBlockType">
+    <div class="define-content-block-type" contenteditable="false">
+        <img loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/add-icon.svg" />
+        <img data-type="paragraph" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/text-icon.svg" />
+        <img data-type="header" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/header-icon.svg" />
+        <img data-type="list" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/bulleted-list-icon.svg" />
+        <img data-type="image" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/image-icon.svg" />
+        <img data-type="component" loading="lazy" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/module-icon.svg" />
+    </div>
+</ccm-template>
+
+<ccm-template key="style">
+    <style>
+        #element {
+            position: relative;
+        }
+    </style>
+</ccm-template>
+
+<ccm-template key="editStyle">
+    <style>
+        *[contenteditable="true"] {
+            outline: 0;
+        }
+
+        *[contenteditable="true"] div:last-child:not(.define-content-block-type):not(.content-component) {
+            display: none;
+        }
+
+        *[contenteditable="true"].content-component-edit-focus {
+            border: 1px solid #f00;
+        }
+
+        .disable-content-editable *[contenteditable="true"], .disable-content-editable *[contenteditable="true"] * {
+            pointer-events: none;
+        }
+
+        *[contenteditable="true"] > .content-component {
+            pointer-events: none;
+        }
+
+        .define-content-block-type {
+            display: none;
+            align-items: center;
+            position: absolute;
+            margin-top: -44px;
+            margin-left: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .define-content-block-type img {
+            height: 35px;
+            margin-right: 8px;
+        }
+
+        .define-content-block-type img:first-child {
+            height: 20px;
+            opacity: 0.5;
+            margin-left: 8px;
+        }
+
+        *[contenteditable="true"][data-type="paragraph"]:empty:not(:focus):before {
+            content: '[Click to edit paragraph text]';
+        }
+
+        *[contenteditable="true"][data-type="header"]:empty:not(:focus):before {
+            content: '[Click to edit header text]';
+        }
+
+        *[contenteditable="true"][data-type="paragraph"]:empty:not(:focus):before, *[contenteditable="true"][data-type="header"]:empty:not(:focus):before {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        *[contenteditable="true"][data-type="paragraph"].focus:empty + .define-content-block-type {
+            display: inline-flex;
+        }
+
+        * {
+            pointer-events: none;
+        }
+
+        .content-zone * {
+            pointer-events: initial;
+        }
+
+        #element.edit-focus {
+            border: 1px solid #1592e6;
+        }
+
+        .content-zone:has(.focus) {
+            border: 1px solid #00e7ff;
+        }
+
+        .add-block {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 2px dashed #d0d0d0;
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+            transition: color .3s ease-in-out;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+
+        .add-block img {
+            margin-right: 10px; height: 32px;
+            transition: opacity .3s ease-in-out;
+        }
+
+        .add-block:hover {
+            color: #555;
+        }
+
+        .add-block:hover img {
+            opacity: 0.6;
+        }
+
+        .add-block:active {
+            color: #aaa;
+        }
+
+        .add-block:active img {
+            opacity: 0.3;
+        }
+
+        .edit-theme-definition {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #1592e6;
+            display: none;
+            height: 30px;
+            background-color: #1592e6;
+            z-index: 999999;
+        }
+
+        .edit-theme-definition, .edit-theme-definition * {
+            pointer-events: all;
+        }
+
+        .edit-focus .edit-theme-definition {
+            display: flex;
+        }
+
+        .edit-theme-definition img {
+            filter: invert(1);
+            padding: 4px 0px;
+        }
+
+        .add-theme-definition-after {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 50%);
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            background-color: #1592e6;
+            border-radius: 50%;
+            transition: background-color .3s ease-in-out;
+            display: none;
+            z-index: 999999;
+        }
+
+        .add-theme-definition-after img {
+            filter: invert(1);
+            width: 100%;
+            height: 100%;
+        }
+
+        .edit-focus .add-theme-definition-after {
+            display: block;
+        }
+
+        .add-theme-definition-after, .add-theme-definition-after * {
+            pointer-events: all;
+        }
+
+        .add-theme-definition-after:hover {
+            background-color: #6bb4e4;
+        }
+
+        .add-theme-definition-after:active {
+            background-color: #9ccff1;
+        }
+
+        .content-zone {
+            position: relative;
+        }
+
+        .edit-inline-text-tool, .edit-inline-text-tool * {
+            pointer-events: all;
+        }
+
+        .edit-inline-text-tool {
+            z-index: 2001;
+            padding: 4px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            position: absolute;
+            display: flex;
+            transform: translate(-50%, calc(-100% - 4px));
+        }
+
+        .edit-inline-text-tool img {
+            height: 30px;
+            padding: 4px;
+            width: 30px;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color .3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .edit-inline-text-tool img:hover {
+            background-color: #eaf6ff;
+        }
+
+        .edit-inline-text-tool img:active {
+            background-color: #d3edff;
+        }
+    </style>
+</ccm-template>

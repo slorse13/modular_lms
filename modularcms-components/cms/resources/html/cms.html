@@ -1,0 +1,44 @@
+<!--
+@overview default HTML template of ccm component for modularcms
+@author Felix Bröhl <broehl@everoo.io> 2020
+@author edited by Stefan Lorse <stefan.lorse@smail.inf.h-brs.de> 2021
+-->
+
+<ccm-template key="main">
+  <div id="main">
+    <header id="header">
+      <!-- <img id="logo" src="%logo%" /> -->
+      <nav id="menu">
+        
+        <ul id="menu-items-wrapper"></ul>
+      </nav>
+       <div id="page_name-wrapper"   ></div>
+       <div id="backend_link"   ><u>Frontend</u></div>
+       <div id="website-manager-wrapper"></div>
+        <div id="user">
+          <div id="user-component-wrapper"></div>
+          <div id="user-settings-button"></div>
+          <div id="user-settings-menu"></div>
+        </div>
+      <div id="hamburger-button"><div class="inner"></div></div>
+    </header>
+    <main id="content"></main>
+    <!--<footer>
+      © Felix Bröhl 2020 – <a href="https://modularcms.io/legal-notice">Legal notice</a> | <a href="https://modularcms.io/legal-notice">Privacy policy</a>
+    </footer>-->
+  </div>
+</ccm-template>
+
+<ccm-template key="menuitem">
+  <li><a href="%route%">%title%</a></li>
+</ccm-template>
+<ccm-template key="page_name">
+  <div   >%eventName%</div>
+</ccm-template>
+
+<ccm-template key="error404">
+  <div id="error404">
+    <img src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/error404.svg" />
+    <h2>The requested page could not be found</h2>
+  </div>
+</ccm-template>

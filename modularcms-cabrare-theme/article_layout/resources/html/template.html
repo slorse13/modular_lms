@@ -1,0 +1,23 @@
+<ccm-template key="main">
+    <div class="content-zone" data-content-zone-name="main"></div>
+    <div class="row">
+        <div id="bottom">
+            <div id="author"></div>
+            <div id="read-next" data-show-read-next="%showReadNext%">
+                <h2>%readNextText%</h2>
+                <div id="read-next-articles"></div>
+            </div>
+        </div>
+    </div>
+</ccm-template>
+<ccm-template key="item">
+    <a class="article-item" href="%url%">
+        <h2>%title%</h2>
+        <p>%description%</p>
+        <b>%readNowText%</b>
+    </a>
+</ccm-template>
+<ccm-template key="authorContent">
+    <img src="%profileImage%" />
+    <div>Published on %creation_date% by %creator%</div>
+</ccm-template>

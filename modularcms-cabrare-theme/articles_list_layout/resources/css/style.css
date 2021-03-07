@@ -1,0 +1,32 @@
+#page-children-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.article-item {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    margin: 15px 0px;
+    width: 100%;
+    transition: opacity .3s ease-in-out;
+}
+
+.article-item h2 {
+    margin-top: 0;
+}
+
+.article-item p {
+    opacity: 0.8;
+}
+
+.article-item:hover {
+    opacity: 0.75;
+}
+
+.article-item:active {
+    opacity: 0.5;
+}

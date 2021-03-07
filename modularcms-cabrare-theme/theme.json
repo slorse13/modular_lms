@@ -1,0 +1,747 @@
+{
+  "name": "Cabrare",
+  "ccmComponent": {
+    "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/cabrare_theme/versions/ccm.cabrare_theme-1.0.0.js",
+    "config": {
+      "logo": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/cabrare_theme/resources/img/default-logo.svg",
+      "logoTitle": "Cabrare theme by modularcms",
+      "colorPrimary": "#44af9b",
+      "colorSecondary": "#1592e6",
+      "colorLight": "#ffffff",
+      "colorFooter": "#eeeeee",
+      "showLogo": false,
+      "eventName": "Lecture Name"
+    }
+  },
+  "ccmBuilder": {
+    "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+    "config": {
+      "cloudinary_image_builder": [
+        "ccm.component",
+        "https://slorse13.github.io/modular_lms/modularcms-components/cloudinary_image_builder/versions/ccm.cloudinary_image_builder-1.0.0.js"
+      ],
+      "entries": [
+        "<legend>Lecture Settings</legend>",
+        {
+          "label": "Lecture title",
+          "name": "eventName",
+          "type": "text",
+          "info": "Defines the title of a event"
+        },
+        "<legend>Logo</legend>",
+        {
+          "label": "Show logo",
+          "name": "showLogo",
+          "type": "checkbox",
+          "info": "Defines if a logo is presented",
+          "checked": true
+        },
+        {
+          "label": "Logo Image",
+          "name": "logo",
+          "type": "cloudinary_image_builder",
+          "info": "The image that should be used"
+        },
+        {
+          "label": "Logo title",
+          "name": "logoTitle",
+          "type": "text",
+          "info": "Defines title that is shown by hovering the logo"
+        },
+        "<legend>Colors</legend>",
+        {
+          "label": "Primary",
+          "name": "colorPrimary",
+          "type": "color",
+          "info": "The primary color"
+        },
+        {
+          "label": "Secondary",
+          "name": "colorSecondary",
+          "type": "color",
+          "info": "The secondary color"
+        },
+        {
+          "label": "Light",
+          "name": "colorLight",
+          "type": "color",
+          "info": "The secondary color"
+        },
+        {
+          "label": "Footer Color",
+          "name": "colorFooter",
+          "type": "color",
+          "info": "The footer color"
+        }
+      ],
+      "css": [
+        "ccm.load",
+        [
+          [
+            "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+            {
+              "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+              "type": "css"
+            },
+            {
+              "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+              "type": "css",
+              "context": "head"
+            }
+          ],
+          "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+        ]
+      ]
+    }
+  },
+  "type": "theme",
+  "themeDefinitions": [
+    {
+      "name": "Article",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/article_layout/versions/ccm.article_layout-1.0.0.js",
+        "config": {}
+      },
+      "ccmBuilder": {"url":null,"config":{}},
+      "type": "layout"
+    },
+    {
+      "name": "Articles list",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/articles_list_layout/versions/ccm.articles_list_layout-1.0.0.js",
+        "config": {}
+      },
+      "ccmBuilder": {"url":null,"config":{}},
+      "type": "layout"
+    },
+    {
+      "name": "Plain",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/plain_layout/versions/ccm.plain_layout-1.0.0.js",
+        "config": {}
+      },
+      "ccmBuilder": {"url":null,"config":{}},
+      "type": "layout"
+    },
+    {
+      "name": "Row with columns",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/row_with_columns_block/versions/ccm.row_with_columns_block-1.0.0.js",
+        "config": {}
+      },
+      "type": "block",
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+            {
+              "label": "Columns count",
+              "name": "columns",
+              "type": "number",
+              "info": "The count of columns",
+              "min": 1,
+              "value": 1,
+              "max": 4
+            },
+            {
+              "label": "Visible only for Admin/Editor/Author",
+              "name": "restrict",
+              "type": "checkbox",
+              "info": "This is to restrict a block for a member role.",
+              "checked": false
+            }
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "type": "contentComponent",
+      "name": "Button link",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/button_content_component/versions/ccm.button_content_component-1.0.0.js",
+        "config": {
+          "text": "Button text",
+          "url": "/",
+          "style": "filled",
+          "align": "left"
+        }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "text",
+              "info": "The button text",
+              "value": "Button text"
+            },
+            {
+              "label": "URL",
+              "name": "url",
+              "type": "text",
+              "info": "The linked url (use \"/\" at the beginning to route on your own site)",
+              "value": "/"
+            },
+            {
+              "label": "Style",
+              "name": "style",
+              "type": "select",
+              "info": "The button style",
+              "value": "filled",
+              "items": [
+                {
+                  "inner": "Filled",
+                  "value": "filled"
+                },
+                {
+                  "inner": "Outline",
+                  "value": "outline"
+                }
+              ]
+            },
+            {
+              "label": "Alignment",
+              "name": "align",
+              "type": "select",
+              "info": "The button alignment",
+              "value": "left",
+              "items": [
+                {
+                  "inner": "Left",
+                  "value": "left"
+                },
+                {
+                  "inner": "Centered",
+                  "value": "center"
+                },
+                {
+                  "inner": "Right",
+                  "value": "right"
+                }
+              ]
+            }
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+
+
+
+
+
+    {
+      "type": "contentComponent",
+      "name": "Chat Component",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/chat/versions/ccm.chat-1.0.2.js",
+              "config": {
+              "data": {
+                "store": [
+                  "ccm.store",
+                  {
+                    "name": "slorse2s_chats", "url": "https://ccm2.inf.h-brs.de"
+                  }
+                ],
+                "key": {}
+              },
+              "editor": [
+                "ccm.start",
+                "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-4.0.0.js",
+                {
+                  "editor": [
+                    "ccm.load",
+                    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js",
+                    "https://ccmjs.github.io/tkless-components/libs/quill/quill.js",
+                    "https://cdn.quilljs.com/1.2.0/quill.snow.css"
+                  ],
+                  "settings": {
+                    "modules": {
+                      "toolbar": [
+                        [
+                          "bold",
+                          "italic",
+                          "strike",
+                          "link"
+                        ],
+                        [
+                          {
+                            "list": "ordered"
+                          },
+                          {
+                            "list": "bullet"
+                          }
+                        ],
+                        [
+                          "image",
+                          "video"
+                        ]
+                      ]
+                    },
+                    "placeholder": "",
+                    "theme": "snow"
+                  }
+                }
+              ],
+              "helper": [
+                "ccm.load",
+                "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs"
+              ],
+              "hide_lang": "",
+              "hide_login": "true",
+              "html": [
+                "ccm.load",
+                "https://ccmjs.github.io/akless-components/chat/resources/templates_v2.html"
+              ],
+              "logger": "",
+              "moment": [
+                "ccm.load",
+                "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
+              ],
+              "onchange": "",
+              "onstart": "",
+              "css": [
+                "ccm.load",
+                "https://ccmjs.github.io/akless-components/chat/resources/snack.css"
+              ],
+              "user": [
+                "ccm.instance",
+                "https://slorse13.github.io/modular_lms/modularcms-components/user/versions/ccm.user-10.0.0.js"
+              ],
+              "picture": "https://ccmjs.github.io/akless-components/user/resources/icon.svg",
+              "lang": "",
+              "time_format": "Do MMMM YYYY, H:mm:ss",
+              "button": "Send"
+            }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+
+
+
+
+
+    {
+      "type": "contentComponent",
+      "name": "YouTube Video Component",
+      "ccmComponent": {
+        "url": "https://ccmjs.github.io/akless-components/youtube/versions/ccm.youtube-2.1.1.js",
+              "config": {
+                      "video": "YE7VzlLtp-4",
+                      "onfinish": {
+                        "restart": true
+                      },
+                      "css": [
+                        "ccm.load",
+                        "https://ccmjs.github.io/akless-components/youtube/resources/default.css"
+                      ],
+                      "html": {
+                        "id": "player",
+                        "inner": {
+                          "id": "iframe"
+                        }
+                      },
+                      "vars": {
+                        "enablejsapi": 1,
+                        "origin": "https://ccmjs.github.io"
+                      }
+                    }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+            {
+              "label": "Video ID",
+              "name": "video",
+              "type": "text",
+              "info": "The ID of the video given by YouTube!",
+              "value": ""
+            }
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+
+
+
+
+
+    {
+      "type": "contentComponent",
+      "name": "Team Project Component",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/team_project/versions/ccm.team_project-1.0.1.js",
+              "config": {
+                          "chat": [
+                            "ccm.component",
+                            "https://ccmjs.github.io/akless-components/chat/versions/ccm.chat-1.0.2.js"
+                          ],
+                          "css": [
+                            "ccm.load",
+                            "https://ccmjs.github.io/akless-components/team_project/resources/default.css"
+                          ],
+                          "data": {
+                            "store": [
+                              "ccm.store",
+                              {
+                                "name": "",
+                                "url": ""
+                              }
+                            ],
+                            "key": "demo"
+                          },
+                          "entries": [
+                            "Teams",
+                            "Kanban Board",
+                            "Chat"
+                          ],
+                          "helper": [
+                            "ccm.load",
+                            "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs"
+                          ],
+                          "html": [
+                            "ccm.load",
+                            "https://ccmjs.github.io/akless-components/team_project/resources/templates.html"
+                          ],
+                          "kanban_board": [
+                            "ccm.component",
+                            "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-3.0.0.js",
+                            {
+                              "ignore": {
+                                "card": {
+                                  "component": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-3.0.0.js",
+                                  "config": {
+                                    "css": [
+                                      "ccm.load",
+                                      "https://ccmjs.github.io/akless-components/kanban_card/resources/blue.css",
+                                      {
+                                        "context": "head",
+                                        "url": "https://ccmjs.github.io/akless-components/libs/weblysleekui/font.css"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "logger": "",
+                          "menu": [
+                            "ccm.component",
+                            "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-3.0.0.js",
+                            [
+                              "ccm.get",
+                              "https://ccmjs.github.io/akless-components/menu/resources/configs.js",
+                              "top_tabs"
+                            ]
+                          ],
+                          "onchange": "",
+                          "teambuild": [
+                            "ccm.component",
+                            "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-4.0.0.js"
+                          ],
+                          "user": [
+                            "ccm.instance",
+                            "https://slorse13.github.io/modular_lms/modularcms-components/user/versions/ccm.user-10.0.0.js"
+                          ]
+                        }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+
+
+
+
+
+
+
+    {
+      "type": "contentComponent",
+      "name": "Q&A Slides Component",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/qa_slidecast/versions/ccm.qa_slidecast-1.0.0.js",
+              "config": {
+                          "html": [
+                            "ccm.load",
+                            "https://ccmjs.github.io/tkless-components/qa_slidecast/resources/templates.html"
+                          ],
+                          "audio": {
+                            "1": "https://ccmjs.github.io/tkless-components/slidecast/resources/slides/learningApps/work&study-jingle.mp3"
+                          },
+                          "slides": "https://ccmjs.github.io/work-and-study/learningapp-marketplace/resources/GameChanger.pdf",
+                          "comment": [
+                            "ccm.component",
+                            "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/qa_slidecast/versions/ccm.comment-6.0.0.js",
+                            {
+                              "editable": true,
+                              "data": {
+                                "store": [
+                                  "ccm.store",
+                                  {
+                                    "name": "",
+                                    "url": ""
+                                  }
+                                ],
+                                "key": "demo"
+                              }
+                            }
+                          ],
+                          "pdf_viewer": [
+                            "ccm.component",
+                            "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-6.1.0.js"
+                          ],
+                          "user": [
+                            "ccm.instance",
+                            "https://slorse13.github.io/modular_lms/modularcms-components/user/versions/ccm.user-10.0.0.js"
+                          ],
+                          "css": [
+                            "ccm.load",
+                            "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                            "https://ccmjs.github.io/tkless-components/qa_slidecast/resources/default.css"
+                          ],
+                          "routing": [
+                            "ccm.instance",
+                            "https://ccmjs.github.io/akless-components/routing/versions/ccm.routing-2.0.5.js"
+                          ],
+                          "helper": [
+                            "ccm.load",
+                            {
+                              "url": "https://ccmjs.github.io/akless-components/modules/versions/helper-5.0.0.mjs"
+                            }
+                          ]
+                        }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "entries": [
+            {
+              "label": "Slides",
+              "name": "slides",
+              "type": "url",
+              "info": "The URL of the PDF File",
+              "value": ""
+            },
+            {
+              "label": "Audios",
+              "name": "audio",
+              "type": "several",
+              "info": "You can add a Audio file for each Slide",
+              "items": [
+                      {
+                        "label": "Slide Number",
+                        "name": "slide_nr",
+                        "type": "number",
+                        "info": "The number of the slide where the Audio will be displayed",
+                        "min": 0
+                      },
+                      {
+                        "label": "Audio",
+                        "name": "audio_src",
+                        "type": "url",
+                        "info": "The URL of the Audio File"
+                      }
+                    ]
+            }
+          ],
+          "css": [
+            "ccm.load",
+            [
+              [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css"
+                },
+                {
+                  "url": "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+                  "type": "css",
+                  "context": "head"
+                }
+              ],
+              "https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/css/submit_builder_default_b4.css"
+            ]
+          ]
+        }
+      }
+    },
+
+
+
+
+
+
+    {
+      "type": "block",
+      "name": "Content with full width background image",
+      "ccmComponent": {
+        "url": "https://slorse13.github.io/modular_lms/modularcms-cabrare-theme/full_width_image_block/versions/ccm.full_width_image_block-1.0.0.js",
+        "config": {
+          "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/q_auto,w_auto/c_limit,w_2048/v1594609440/cms/ag6mzd8oejnreokyon20.jpg",
+          "align": "center",
+          "fullHeight": false
+        }
+      },
+      "ccmBuilder": {
+        "url": "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-8.1.3.js",
+        "config": {
+          "cloudinary_image_builder": [
+            "ccm.component",
+            "https://slorse13.github.io/modular_lms/modularcms-components/cloudinary_image_builder/versions/ccm.cloudinary_image_builder-1.0.0.js"
+          ],
+          "entries": [
+            {
+              "label": "Background image",
+              "name": "imageSrc",
+              "type": "cloudinary_image_builder",
+              "info": "The url to the image that should be used"
+            },
+            {
+              "label": "Alignment",
+              "name": "align",
+              "type": "select",
+              "info": "The button alignment",
+              "items": [
+                {
+                  "inner": "Left",
+                  "value": "left"
+                },
+                {
+                  "inner": "Centered",
+                  "value": "center"
+                },
+                {
+                  "inner": "Right",
+                  "value": "right"
+                }
+              ]
+            },
+            {
+              "label": "Full height",
+              "name": "fullHeight",
+              "type": "checkbox",
+              "info": "Defines if the full view height should be used"
+            },
+            {
+              "label": "Enable Background Image",
+              "name": "bgimage",
+              "type": "checkbox",
+              "info": "Check to display a background image.",
+              "checked": false
+            },
+            {
+              "label": "Visible only for Admin/Editor/Author",
+              "name": "restrict",
+              "type": "checkbox",
+              "info": "This is to restrict a block for a member role.",
+              "checked": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

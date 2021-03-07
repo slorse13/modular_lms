@@ -1,0 +1,140 @@
+#element, nav, #element > div {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+ul li {
+    padding: 0px 16px;
+}
+
+ul li a:link, ul li a:hover, ul li a:visited {
+    color: var(--header-nav-color);
+    text-decoration: none;
+}
+
+ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
+    color: var(--header-nav-color-active);
+}
+
+#hamburger-wrapper {
+    position: relative;
+    height: 100%;
+    display: none;
+}
+
+#hamburger-button {
+    display: none;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 0px;
+    width: 25px;
+    height: 21px;
+    margin: 10px;
+    transform: translateY(-50%);
+}
+
+#hamburger-button .inner, #hamburger-button:before, #hamburger-button:after {
+    width: 25px;
+    height: 3px;
+    background-color: var(--header-nav-hamburger-button-color);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    transition: opacity .3s ease-in-out, transform .2s ease-in-out;
+}
+
+#hamburger-button:before, #hamburger-button:after {
+    content: '';
+    position: absolute;
+}
+
+#hamburger-button:before {
+    top: 0px;
+}
+
+#hamburger-button .inner {
+    margin-top: 9px;
+    opacity: 1;
+}
+
+#hamburger-button:after {
+    top: 18px;
+}
+
+#hamburger-button.active .inner {
+    opacity: 0;
+}
+
+#hamburger-button.active:before {
+    transform: translateY(9px) rotate(135deg);
+}
+
+#hamburger-button.active:after {
+    transform: translateY(-9px) rotate(225deg);
+}
+
+   
+
+/*@media (max-width: 800px) {*/
+    nav {
+        height: auto;
+        max-height: 0vh;
+        position: absolute;
+        transition: max-height .3s linear;
+        width: 100vw;
+        background-color: var(--header-nav-mobile-background-color);
+        top: 75px;
+        left: 0px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        flex-direction: column-reverse;
+        overflow: auto;
+    } 
+    nav #user-component-wrapper {
+        padding: 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    nav ul li {
+        padding: 0px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 16px;
+        width: 100%;
+        display: block;
+    }
+
+    nav ul li:nth-child(n+2) {
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        max-height: calc(100vh - 75px);
+    }
+
+    nav + div {
+        position: relative;
+        height: 100%;
+    }
+
+    #hamburger-wrapper, #hamburger-button {
+        display: block;
+    }
+
+#menu-item-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*}*/

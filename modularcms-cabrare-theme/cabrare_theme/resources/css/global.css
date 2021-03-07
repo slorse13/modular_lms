@@ -1,0 +1,64 @@
+/**
+ * Colors
+ */
+* {
+    /*--color-primary: #44af9b;
+    --color-secondary: #1592e6;
+    --color-light: #fff;*/
+    --header-background-color: #fff;
+    --header-nav-color: #333;
+    --header-nav-color-active: var(--color-primary);
+    --header-nav-mobile-background-color: var(--color-light);
+    --header-nav-hamburger-button-color: var(--color-primary);
+    /*--footer-color: #eee;*/
+}
+
+
+/**
+ * Font
+ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/**
+ * row
+ */
+
+.row {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px 10px;
+}
+
+.row .image-wrapper img {
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+
+
+#right_header{
+    position: fixed;
+    right: 20px;
+    top: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+    #right_header{
+        right: 55px;
+    } 
+}
+
+
+#backend-wrapper {
+    align-self: center;
+    margin-right: 13px;
+    cursor: pointer;
+ }

@@ -1,0 +1,74 @@
+/**
+ * @overview default layout of ccm component for user authentication
+ * @author Felix Bröhl <broehl@everoo.io> 2020
+ * @license The MIT License (MIT)
+ */
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+#logged_in {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: var(--color-light);
+  overflow: hidden;
+}
+
+#user {
+  display: flex;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+#avatar {
+  width: 23px;
+  height: 23px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  border: 1px solid #eee;
+  margin: 5px;
+}
+
+#username {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text);
+  padding: 5px;
+  padding-left: 0px;
+  align-self: center;
+}
+
+#logout {
+  height: 33px;
+  padding: 5px;
+  border-left: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+}
+
+#logout:hover, #user:hover {
+  background-color: #eee;
+}
+
+#logout:active, #user:active {
+  background-color: #ddd;
+}
+
+#logout img {
+  fill: var(--color-text);
+  width: 16px;
+  display: block;
+}
+
+#avatar, #logout {
+  flex-shrink: 0;
+}

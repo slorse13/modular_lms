@@ -1,0 +1,40 @@
+<!--
+@overview default HTML template of ccm component for profile_editor modularcms
+@author Felix Bröhl <broehl@everoo.io> 2020
+-->
+
+<ccm-template key="loader">
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+</ccm-template>
+<ccm-template key="editProfile">
+    <div class="edit-container">
+        <div class="edit-head-wrapper">
+            <div class="edit-head">
+                <div class="edit-head-avatar">
+                    <img id="avatar" src="%imageUrl%" />
+                    <div id="upload-cover">
+                        <img src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/camera-icon.svg" />
+                    </div>
+                </div>
+                <div class="edit-head-title">%username%</div>
+                <div id="save-button" class="button button-primary button-responsive-hide-text">
+                    <img class="icon" src="https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/save-icon.svg" />
+                    <div class="button-text">Save</div>
+                </div>
+            </div>
+            <div class="edit-menu">
+                <div class="menu-item active">Details</div>
+            </div>
+        </div>
+        <div class="edit-content">
+            <div>
+                <label for="user-password">New password (Enter a new password or leave empty to not change it)</label>
+                <input type="password" id="user-password" />
+            </div>
+            <div>
+                <label for="user-password-repetition">New password repetition (Enter a new password or leave empty to not change it)</label>
+                <input type="password" id="user-password-repetition" />
+            </div>
+        </div>
+    </div>
+</ccm-template>

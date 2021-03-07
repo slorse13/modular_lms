@@ -1,0 +1,138 @@
+#element {
+    height: 100%;
+}
+
+#list .list-item {
+    cursor: pointer;
+}
+
+.edit-head .search {
+    margin-right: 10px;
+}
+
+#create-new-page-modal #create-modal-step-1, #add-component-modal #add-component-modal-step-1 {
+    height: 500px;
+    max-height: calc(100% - 25px);
+}
+
+#list-modal, #add-system-component-grid-modal {
+    margin-bottom: 10px;
+}
+
+#save-button, #publish-button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#edit-content {
+    display: flex;
+    border: none;
+    padding: 0px;
+    height: 100%;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    #edit-content {
+        flex-direction: column;
+    }
+}
+
+#edit-content:not(.active) {
+    display: none;
+}
+
+#edit-content #page-renderer-wrapper {
+    flex-grow: 1;
+    padding: 0px;
+    border: 1px solid #c4c4c4;
+}
+
+#edit-content #builder {
+    margin-left: 10px;
+    width: 33%;
+    min-width: 300px;
+}
+
+#edit-content #page-renderer-wrapper, #edit-content #builder {
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+#edit-content #builder:not(.has-builder-content) {
+    display: none;
+}
+
+.edit-content:not(.active) {
+    display: none;
+}
+
+#edit-page-layout-select, #edit-page-theme-select {
+    margin-bottom: 20px;
+}
+
+.list-item-title .draft {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#add-component-modal-step-1 {
+    width: 80%;
+    height: 80% !important;
+}
+
+#add-component-grid-modal .list-item-wrapper {
+    width: 33%;
+    min-width: 200px;
+    flex-grow: 1;
+}
+
+#add-component-grid-modal .list-item {
+    text-align: center;
+}
+
+#add-component-grid-modal .list-item-title {
+    font-size: 16px;
+}
+
+#add-component-grid-modal img {
+    height: 60px;
+    width: 60px;
+    margin: 0 auto 7px auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 3px;
+}
+
+#add-component-grid-modal > div > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#add-component-grid-modal label {
+    font-weight: 600;
+}
+
+#add-component-demo-wrapper {
+    border: 1px solid #ddd;
+}
+
+#add-component-details-head {
+    display: flex;
+    align-items: center;
+}
+
+#add-component-details-head img {
+    width: 75px;
+    height: 75px;
+}
+
+#add-component-details-head h3 {
+    margin-left: 10px;
+}
+
+#add-component-modal .modal-footer {
+    margin-top: 10px;
+}

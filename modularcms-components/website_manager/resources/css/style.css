@@ -1,0 +1,121 @@
+#element, #website-select-wrapper {
+    height: 100%;
+}
+
+#website-select-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#website-select-box {
+    display: flex;
+    padding: 0px 7px;
+    border: 1px solid var(--color-light);
+    border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    align-items: center;
+    position: relative;
+}
+
+#website-select-domain {
+    color: var(--color-light);
+}
+
+#website-select-icon {
+    filter: invert(1);
+    height: 16px;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+#website-select-box.list-open #website-select-icon {
+    transform: rotate(180deg);
+}
+
+#website-select-drop-down {
+    position: absolute;
+    top: 33px;
+    left: 0px;
+    background-color: var(--color-light);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.39);
+    color: var(--color-text);
+    display: none;
+}
+#website-select-box.list-open #website-select-drop-down {
+    display: block;
+}
+
+.website-select-list-item, #website-select-add-button {
+    padding: 7px;
+}
+
+.website-select-list-item {
+    display: flex;
+}
+
+.website-select-list-item:before, #website-select-manage-button:before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    margin-right: 5px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.website-select-list-item.selected:before {
+    background-image: url(https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/checkmark-icon.svg);
+    filter: invert(44%) sepia(87%) saturate(638%) hue-rotate(164deg) brightness(95%) contrast(96%);
+}
+
+#website-select-manage-button {
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+    display: flex;
+}
+
+#website-select-manage-button:before {
+    background-image: url(https://slorse13.github.io/modular_lms/modularcms-components/cms/resources/img/settings-icon.svg);
+    filter: invert(44%) sepia(87%) saturate(638%) hue-rotate(164deg) brightness(95%) contrast(96%);
+}
+
+#list-modal .list-item {
+    padding-right: 120px;
+}
+
+#list-modal .list-item .list-item-more-button:nth-child(3) {
+    right: 85px;
+}
+
+#list-modal .list-item .list-item-more-button:nth-child(4) {
+    right: 50px;
+}
+
+#list-modal .list-item .list-item-more-button {
+    cursor: pointer;
+}
+
+#manage-websites-modal #manage-modal {
+    height: 500px;
+    max-height: calc(100% - 25px);
+}
+
+#list-modal {
+    margin-bottom: 10px;
+}
+
+/*@media (max-width: 800px) {*/
+    #website-select-icon {
+        filter: invert(46%) sepia(75%) saturate(1827%) hue-rotate(179deg) brightness(93%) contrast(95%);
+    }
+    #website-select-domain {
+        color: var(--color-text);
+    }
+    #website-select-box {
+        border-color: var(--color-secondary);
+        background-color: var(--color-secondary);
+        margin: 8px;
+    }

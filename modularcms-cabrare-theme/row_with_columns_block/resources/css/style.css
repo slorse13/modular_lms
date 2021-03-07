@@ -1,0 +1,51 @@
+.row > div {
+    display: flex;
+}
+
+.column {
+    flex-grow: 1;
+}
+
+#element.LG .row > div .column:nth-child(n+2) {
+    margin-left: 20px;
+}
+
+#element:not(.LG) .row > div {
+    flex-direction: column;
+}
+
+#element:not(.LG) .column {
+    width: 100%
+}
+
+.row[data-columns-count="2"] .column {
+    width: 50%;
+}
+
+.row[data-columns-count="2"]:has(.two-thirds) .column {
+    width: calc(100% / 3);
+}
+
+.row[data-columns-count="2"]:has(.two-thirds) .column.two-thirds {
+    width: calc(200% / 3);
+}
+
+.row[data-columns-count="3"] .column {
+    width: calc(100% / 3);
+}
+
+.row[data-columns-count="4"] .column {
+    width: 25%;
+}
+
+#element[data-align="left"] .column {
+    text-align: left;
+}
+
+#element[data-align="center"] .column {
+    text-align: center;
+}
+
+#element[data-align="right"] .column {
+    text-align: right;
+}

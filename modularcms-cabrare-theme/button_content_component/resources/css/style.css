@@ -1,0 +1,36 @@
+#button {
+    background-color: var(--color-primary);
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--color-light);
+    display: inline-block;
+    transition: opacity .3s ease-in-out;
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+}
+
+#button:hover {
+    opacity: 0.85;
+}
+
+#button:active {
+    opacity: 0.55;
+}
+
+#element[data-style="outline"] #button {
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+#element[data-align="left"] {
+    text-align: left;
+}
+
+#element[data-align="center"] {
+    text-align: center;
+}
+
+#element[data-align="right"] {
+    text-align: right;
+}
